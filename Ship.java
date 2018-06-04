@@ -1,72 +1,84 @@
+package UI;
 
 public class Ship {
 
-
+	
 	private String name;
+	
+	private int ID;//serves as ID the ship and the length
+	
 
-
-	private int size;
-
-
-	private boolean isVertical;
-
+	
+	
+	
 	private int lives;
+	
 
-	private Point head;
-	private Point tail;
+	
 
-	public Ship(String nm, int s){
-		name=nm;
-		size=s;
-		lives=size;
+
+	
+	
+	public Ship(int id){
+		
+		ID=id;
+		
+		switch(ID){
+		
+		case 2: name= "Destroyer";
+		
+		case 3: name="Submarine";
+		
+	
+		
+		case 4: name="Battleship";
+		
+		case 5: name="Carrier";
+		
+		case 6: name="Ultimate Patrol Boat";
+		
+		
+		}
+		
+
+			
+		lives=ID;
 	}
-
-	public String getName(){
-
+	
+public String getName(){
+		
+		
+		
 		return name;
 	}
-	public int getLength(){
-
-
-
-		return size;
-	}
+	
 	public boolean sunk(){
-		if (lives == 0)
+		
+		if (lives<=0)
+		
 			return true;
+		
 		else
 			return false;
-	}
-
-	public void setDirection(boolean dir){
-		isVertical=dir;
+		
 	}
 	
-	public void setCoordinates(int row1, int row2, int column1, int column2){
-		head=new Point(row1, column2);
-		tail=new Point(row2, column1);
-	}
+public void hitShip(){
 	
-	public Point getHead(){
-
-		return head;
-	}
-	public Point getTail(){
-
-		return tail;
-	}
-
-
-
-
-
-
+	
+	lives--;
+	
 }
-
-
-
-
-
-
-
-
+public int getID(){
+	
+	return ID;
+	
+	
+}
+	
+	
+	
+	
+	
+	
+}

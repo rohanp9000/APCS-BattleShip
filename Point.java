@@ -1,10 +1,10 @@
+package UI;
 
 public class Point {
 
 	
 	
-	private boolean hasShip;
-
+	private int shipID;
 	private boolean hit;
 
 	private boolean isAvailable;
@@ -20,7 +20,7 @@ public class Point {
 		x=xc;
 		
 		y=yc;
-		hasShip=false;
+		shipID=0;
 
 		hit=false;
 
@@ -28,9 +28,9 @@ public class Point {
 
 
 	}
-	public void addShip() throws Exception{
+	public void addShip(int ID) throws Exception{
 
-		if(hasShip){
+		if(shipID!=0){
 			
 			throw new Exception("Ship already placed here");
 			
@@ -38,7 +38,7 @@ public class Point {
 		}
 		
 		
-		hasShip=true;
+		shipID=ID;
 
 
 
@@ -51,7 +51,7 @@ public class Point {
 		}
 		else{
 			isAvailable=false;
-			if(hasShip){
+			if(shipID!=0){
 
 				hit=true;
 			}
@@ -75,4 +75,3 @@ public class Point {
 
 
 }
-
